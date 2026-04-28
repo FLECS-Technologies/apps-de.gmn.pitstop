@@ -2,7 +2,24 @@
     "$schema": "https://raw.githubusercontent.com/FLECS-Technologies/app-sdk/3.0.0/manifest.schema.json",
     "_schemaVersion": "3.0.0",
     "app": "de.gmn.pitstop",
-    "version": "##VERSION##",
+    "version": "0.1.0",
     "revision": "0",
-    "image": "flecs.azurecr.io/de.gmn.pitstop"
+    "image": "flecs.azurecr.io/de.gmn.pitstop",
+    "multiInstance": false,
+    "editors": [
+        {
+            "name": "Pitstop · Spindel-Rücksendung",
+            "port": 8070,
+            "supportsReverseProxy": false
+        }
+    ],
+    "ports": [
+        "8070:8070",
+        "8091:8091"
+    ],
+    "volumes": [
+        "data:/app/data",
+        "fleetManagementData:/app/fleetManagementData"
+    ],
+    "env": []
 }
